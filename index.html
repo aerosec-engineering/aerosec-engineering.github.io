@@ -1,21 +1,214 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AEROSEC Engineering</title>
-<link rel="icon" href="data:,">
-<style>
-  body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;line-height:1.5}
-  header{padding:4rem 1rem;text-align:center}
-  main{max-width:860px;margin:auto;padding:0 1rem 4rem}
-  h1{font-size:2.1rem;margin:.2rem 0}
-  .tag{font-size:.95rem;opacity:.7}
-</style>
-<header>
-  <h1>AEROSEC Engineering</h1>
-  <div class="tag">Aviation cybersecurity • Canada</div>
-</header>
-<main>
-  <p>Site coming online. Contact: <a href="mailto:info@aerosec.ca">info@aerosec.ca</a></p>
-</main>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AEROSEC Engineering — Airworthiness & Aviation Cybersecurity</title>
+  <meta name="description" content="AEROSEC Engineering provides airworthiness security and aviation cybersecurity consulting: risk assessments, threat modeling, certification support, and secure systems engineering." />
+  <!-- Set this to your final domain once DNS is live -->
+  <link rel="canonical" href="https://aerosec.ca/" />
+  <meta property="og:title" content="AEROSEC Engineering" />
+  <meta property="og:description" content="Airworthiness & Aviation Cybersecurity consulting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aerosec.ca/" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    :root {
+      --bg: #0b1021;        /* deep navy */
+      --bg-2: #0e172a;      /* slate/navy */
+      --card: #121a33;      /* slightly lighter */
+      --text: #e5e7eb;      /* slate-100 */
+      --muted: #a7b0c3;
+      --brand: #60a5fa;     /* blue-400 */
+      --brand-2: #22d3ee;   /* cyan-400 */
+      --accent: #34d399;    /* green-400 */
+      --ring: rgba(96,165,250,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -20%, rgba(34,211,238,.12), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(96,165,250,.12), transparent 60%), var(--bg)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 1.2rem}
+
+    /* Header */
+    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);background:linear-gradient(to bottom, rgba(11,16,33,.85), rgba(11,16,33,.55) 70%, transparent);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg, var(--brand), var(--brand-2), var(--accent));box-shadow:0 0 0 4px rgba(96,165,250,.15)}
+    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    nav a{padding:.5rem .75rem;border-radius:10px;color:var(--muted)}
+    nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+    .cta{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#05101f;padding:.6rem 1rem;border-radius:12px;font-weight:700;box-shadow:0 6px 20px rgba(34,211,238,.25)}
+
+    /* Hero */
+    .hero{padding:5.5rem 0 4rem;border-bottom:1px solid rgba(148,163,184,.12)}
+    .hero h1{font-size:clamp(2.1rem, 3.6vw + 1rem, 3.4rem);line-height:1.08;margin:.4rem 0 .8rem}
+    .hero p{font-size:1.125rem;color:var(--muted);max-width:58ch}
+    .badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 2rem}
+    .badge{border:1px solid rgba(148,163,184,.2);color:var(--muted);padding:.35rem .6rem;border-radius:999px;font-size:.9rem}
+
+    /* Grid cards */
+    .section{padding:3rem 0}
+    .grid{display:grid;gap:1rem;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 6;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:1.1rem}
+    .card h3{margin:.4rem 0 .3rem}
+    .card p{color:var(--muted);margin:.2rem 0 .8rem}
+    .card small{color:#93c5fd}
+    @media (max-width:900px){.card{grid-column:span 12}}
+
+    /* Split */
+    .split{display:grid;gap:1.2rem;grid-template-columns:repeat(12,1fr)}
+    .split > div:first-child{grid-column:span 7}
+    .split > div:last-child{grid-column:span 5}
+    @media (max-width:900px){.split > div{grid-column:span 12}}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(148,163,184,.12);padding:2rem 0;color:var(--muted)}
+    .footer-grid{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+
+    /* Util */
+    .chip{display:inline-flex;align-items:center;gap:.4rem;background:rgba(52,211,153,.15);color:#bbf7d0;border:1px solid rgba(52,211,153,.35);padding:.25rem .5rem;border-radius:999px;font-size:.85rem}
+    .ghost{background:transparent;border:1px solid rgba(148,163,184,.2);color:var(--text)}
+    .row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>AEROSEC Engineering</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="cta" href="mailto:info@aerosec.ca">Email us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="badges">
+        <span class="chip">Airworthiness Security</span>
+        <span class="chip">Aviation Cybersecurity</span>
+        <span class="chip">Threat & Vulnerability Assessment</span>
+      </div>
+      <h1>Secure-by-design for modern aviation systems.</h1>
+      <p>We help OEMs, operators, and integrators meet aviation cybersecurity and airworthiness objectives—combining rigorous engineering with practical certification pathways.</p>
+      <div class="row" style="margin-top:1.2rem">
+        <a class="cta" href="#contact">Book a consult</a>
+        <a class="cta ghost" href="mailto:info@aerosec.ca">info@aerosec.ca</a>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2 style="margin:0 0 1rem">Services</h2>
+      <div class="grid">
+        <article class="card">
+          <small>DO‑326A / ED‑202A • DO‑356A • DO‑355</small>
+          <h3>Airworthiness Security</h3>
+          <p>Security risk assessments (SRA), asset criticality, security objectives, and assurance activities aligned to aviation guidance and certification expectations.</p>
+        </article>
+        <article class="card">
+          <small>Threat Modeling • Attack Surface</small>
+          <h3>Vulnerability Assessments</h3>
+          <p>System‑of‑systems and component assessments, test planning, and evidence generation to support acceptance and continued airworthiness.</p>
+        </article>
+        <article class="card">
+          <small>Process • Tooling • Review</small>
+          <h3>Secure Engineering Support</h3>
+          <p>Secure architecture reviews, supplier oversight, SBOM review, and DevSecOps guardrails for avionics and ground systems.</p>
+        </article>
+        <article class="card">
+          <small>Policy • Compliance • Audit</small>
+          <h3>Certification & Compliance</h3>
+          <p>Gap analysis, artifacts, and liaison support for regulators and authorities. Clear, auditable documentation without busywork.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="expertise" class="section container">
+      <div class="split">
+        <div>
+          <h2 style="margin:0 0 .6rem">Expertise</h2>
+          <p class="muted">Defense and civilian aviation programs, avionics integration, and cyber‑resilient architectures. Practical, testable measures that satisfy both engineers and certifiers.</p>
+          <ul style="line-height:1.9;margin:.6rem 0 0;color:var(--muted)">
+            <li>Security objectives and assurance strategies tied to safety cases</li>
+            <li>Model‑based systems security (MBSE) and traceable requirements</li>
+            <li>Evidence‑driven acceptance: repeatable tests over narratives</li>
+            <li>Supplier oversight: requirements, checklists, and independent review</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="height:100%">
+            <small>Contact</small>
+            <h3 style="margin:.35rem 0 .2rem">Let’s discuss your program</h3>
+            <p class="muted">Prefer email? We use Proton for private‑at‑rest communications.</p>
+            <div class="row" style="margin-top:.6rem">
+              <a class="cta" href="mailto:info@aerosec.ca">info@aerosec.ca</a>
+              <a class="cta ghost" href="#contact">Contact form</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2 style="margin:0 0 .75rem">Contact</h2>
+      <div class="grid">
+        <div class="card" style="grid-column:span 7">
+          <h3 style="margin:.2rem 0 .4rem">Email</h3>
+          <p><a href="mailto:info@aerosec.ca">info@aerosec.ca</a></p>
+          <p class="muted" style="margin-top:.6rem">Prefer encrypted exchange? We support PGP. Share your public key in your first email to bootstrap.</p>
+        </div>
+        <div class="card" style="grid-column:span 5">
+          <h3 style="margin:.2rem 0 .4rem">Company</h3>
+          <p class="muted">AEROSEC Engineering • Canada</p>
+          <p class="muted">© <span id="y"></span> AEROSEC Engineering</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="row">
+        <div class="logo" aria-hidden="true"></div>
+        <span class="muted">© <span id="y2"></span> AEROSEC Engineering • All rights reserved</span>
+      </div>
+      <div class="row">
+        <a class="muted" href="/privacy.html">Privacy</a>
+        <span class="muted">·</span>
+        <a class="muted" href="/security.txt">security.txt</a>
+        <span class="muted">·</span>
+        <a class="muted" href="/robots.txt">robots</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const y = new Date().getFullYear();
+    document.getElementById('y').textContent = y;
+    document.getElementById('y2').textContent = y;
+  </script>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AEROSEC Engineering",
+    "url": "https://aerosec.ca/",
+    "email": "info@aerosec.ca",
+    "description": "Airworthiness and aviation cybersecurity consulting.",
+    "logo": "https://aerosec.ca/icon.png"
+  }
+  </script>
+</body>
 </html>
