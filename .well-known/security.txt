@@ -1,0 +1,11 @@
+# security.txt for AEROSEC Engineering — RFC 9116
+# Place this file at: https://aerosec.ca/.well-known/security.txt
+# Optional copy at:   https://aerosec.ca/security.txt
+
+Contact: mailto:security@aerosec.ca
+Contact: mailto:info@aerosec.ca
+Encryption: https://aerosec.ca/.well-known/openpgpkey/hu/mg6owx9w8c3ejg3tu31f4tha5n17d4rj?l=info
+Policy: https://aerosec.ca/privacy.html
+Preferred-Languages: en
+Canonical: https://aerosec.ca/.well-known/security.txt
+Expires: 2026-09-07T23:59:59Z
