@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — AEROSEC Engineering</title>
+  <meta name="description" content="Privacy policy for AEROSEC Engineering. What we collect, how we use it, and how to contact us." />
+  <link rel="canonical" href="https://aerosec.ca/privacy.html" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root { --bg:#0b1021; --bg-2:#0e172a; --card:#121a33; --text:#e5e7eb; --muted:#a7b0c3; --brand:#60a5fa; --brand-2:#22d3ee; --accent:#34d399 }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -20%, rgba(34,211,238,.12), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(96,165,250,.12), transparent 60%), var(--bg)}
+    a{color:inherit}
+    .container{max-width:900px;margin:0 auto;padding:0 1.2rem}
+    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);background:linear-gradient(to bottom, rgba(11,16,33,.85), rgba(11,16,33,.55) 70%, transparent);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:700}
+    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg, var(--brand), var(--brand-2), var(--accent));box-shadow:0 0 0 4px rgba(96,165,250,.15)}
+    .cta{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#05101f;padding:.5rem .9rem;border-radius:10px;font-weight:700;box-shadow:0 6px 20px rgba(34,211,238,.25)}
+    main{padding:4rem 0}
+    h1{font-size:clamp(1.8rem, 3.2vw + .6rem, 2.6rem);line-height:1.1;margin:.2rem 0 .8rem}
+    h2{margin:2rem 0 .5rem}
+    p,li{color:var(--muted)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:1.1rem}
+    footer{border-top:1px solid rgba(148,163,184,.12);padding:2rem 0;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div><a href="/">AEROSEC Engineering</a></div>
+      <a class="cta" href="mailto:info@aerosec.ca">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <p class="card">Effective date: <strong id="d"></strong></p>
+
+    <h2>Who we are</h2>
+    <p>AEROSEC Engineering ("we", "us") is a Canadian engineering consultancy focused on airworthiness security and aviation cybersecurity. Contact: <a href="mailto:info@aerosec.ca">info@aerosec.ca</a>.</p>
+
+    <h2>What this site collects</h2>
+    <ul>
+      <li><strong>Website content only.</strong> This is a static site hosted on GitHub Pages. We do not run server-side code here.</li>
+      <li><strong>No forms, no cookies by default.</strong> If we later enable privacy-friendly analytics (e.g., Plausible/Umami), we will update this page.</li>
+      <li><strong>Hosting logs.</strong> GitHub Pages may collect standard HTTP logs (IP address, user agent, referrer) for reliability and security. We do not access or combine those logs to profile visitors.</li>
+      <li><strong>Email you send us.</strong> When you contact us, we receive your email address and message content. We use Proton services for private-at-rest email storage.</li>
+    </ul>
+
+    <h2>How we use information</h2>
+    <ul>
+      <li>Respond to enquiries and deliver consulting services.</li>
+      <li>Maintain site security and diagnose availability issues.</li>
+      <li>Meet legal, regulatory, and accounting obligations.</li>
+    </ul>
+
+    <h2>Data storage & security</h2>
+    <ul>
+      <li><strong>Email & documents:</strong> stored with Proton services, using end-to-end encryption at rest for our mailboxes and encrypted storage for files.</li>
+      <li><strong>Website hosting:</strong> GitHub Pages (static files). We keep no server-side databases for this site.</li>
+    </ul>
+
+    <h2>Sharing</h2>
+    <p>We do not sell personal data. We may share data with service providers (e.g., Proton, GitHub) strictly to operate this site and communications, or when required by law.</p>
+
+    <h2>Retention</h2>
+    <p>We retain correspondence and engagement records only as long as necessary for business, legal, or regulatory purposes, then securely delete or archive them.</p>
+
+    <h2>Your rights</h2>
+    <p>You may request access, correction, or deletion of your personal data in our possession, subject to applicable law. Contact us at <a href="mailto:info@aerosec.ca">info@aerosec.ca</a>.</p>
+
+    <h2>Changes</h2>
+    <p>We may update this policy as our site or practices evolve. Material changes will be noted here with a new effective date.</p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="y"></span> AEROSEC Engineering • <a href="/">Home</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const now = new Date();
+    document.getElementById('d').textContent = now.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('y').textContent = now.getFullYear();
+  </script>
+</body>
+</html>
