@@ -76,10 +76,22 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <img src="AEROSEC_logo.svg" alt="AEROSEC Engineering logo" class="logo" />
-        <span>AEROSEC Engineering</span>
+      <div class="brand" style="display:flex; align-items:center; gap:0.75rem;">
+      <div 
+        class="logo" 
+        aria-hidden="true"
+        style="
+          width:160px;
+          aspect-ratio:3/1;
+          background-image:url('AEROSEC_logo.svg');
+          background-repeat:no-repeat;
+          background-size:contain;
+          background-position:center;
+          background-color:transparent;
+          display:inline-block;">
       </div>
+      <span style="font-size:1.2rem; font-weight:600;">AEROSEC Engineering</span>
+    </div>
       <nav aria-label="Primary">
         <ul>
           <li><a href="#services">Services</a></li>
